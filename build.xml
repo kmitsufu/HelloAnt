@@ -26,7 +26,7 @@
     </target>
 
     <!-- Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged and run tests in this organization's namespace only-->
-    <target name="deployUnpackaged">
+    <target name="deployUnpackaged" depends="retrieveUnpackaged">
       <sf:deploy username="${sf.dev2username}" password="${sf.dev2password}" sessionId="${sf.sessionId}" serverurl="${sf.sandboxurl}" maxPoll="${sf.maxPoll}" deployRoot="retrieveUnpackaged" rollbackOnError="true"/>
     </target>
 </project>
